@@ -12,12 +12,7 @@ public class isEnVie {
 	
 	
 	public Boolean isAlive(int defenseur){
-		
-		if(defense > 0) {
-			return true;
-		}else {
-			return false;
-		}
+		return defense > 0 ? true : false;
 		
 	}
 }
