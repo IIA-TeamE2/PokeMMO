@@ -1,5 +1,9 @@
 package com.tactfactory.pokemmo.gameplay;
 
+/**
+ * @author AACKER
+ *
+ */
 
 
 public class RemoveLife {
