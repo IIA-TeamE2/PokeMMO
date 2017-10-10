@@ -45,4 +45,11 @@ public class Connection {
 		return pseudo;
 	}
 	
+	/**
+	 * Say lost when the connection is established.
+	 */
+	public void lost() {
+		System.out.println("Connexion perdue.");
+	}
+	
 }
