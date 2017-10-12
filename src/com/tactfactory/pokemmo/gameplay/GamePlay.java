@@ -5,60 +5,30 @@ package com.tactfactory.pokemmo.gameplay;
 
 import java.util.Random;
 
+import com.tactfactory.pokemmo.model.User;
+
 /**
  * @author ALEPAG1
  *
  */
 public class GamePlay {
 	
-	Session session = new Session();
-	
-	User user1 = new User(session);
-	User user2 = new User(session);
-	
-	Perso perso1 = new Perso(user1);
-	Perso perso2 = new Perso(user2);
-	
-	Perso defenseur = perso2;
-	
-	public static void Gameplay() {
+	User user;
 		
-		Boolean Alive = true;
+	Character pokemon;
+	
+	public GamePlay() {}
+	
+	public void run() {
+		//fonction qui demande le pseudo du user
+		//Recupère une string
 		
-		while(Alive()) {
-			int attack = attack();
-			bool hit = checkHit();
-			
-			defenseDown(hit, attack, defenseur);
+		this.user = new User(userName);
+		
+		//Fonction qui demande l'élément du pokémon à l'user
+		//Récupère l'élément
+		
+		this.pokemon = new Character("Nom du Pokémon", element);
+	}
 
-			Alive = isAlive(defenseur);
-			
-			turn();
-			
-		}
-	}
-	
-	private int attack() {
-		Random r = new Random();
-		return r.nextInt(10);
-	}
-	
-	private boolean checkHit() {
-		Random r = new Random();
-		random = r.nextInt(10);
-		
-		return random >= 5;
-	}
-	
-	private void defenseDown(boolean hit, int attack, Perso defenseur) {
-		defenseur.defense = hit ? defenseur.defense - attack : defenseur.defense;
-	}
-	
-	public Boolean isAlive(Perso defenseur){
-		return defenseur.defense > 0;
-	}
-	
-	private void turn() {
-		this.defenseur = this.defenseur == perso1 ? perso2 : perso1; 
-	}
 }
